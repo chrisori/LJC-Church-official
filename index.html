@@ -368,8 +368,9 @@ form.addEventListener("submit", async function (event) {
   });
 
   if (result.error) {
-    formMessage.style.color = "red";
-    formMessage.textContent = "Sorry, something went wrong. Please try again.";
+  formMessage.style.color = "red";
+  formMessage.textContent = "Sorry, something went wrong: " + result.error.message;
+  console.log(result.error);
   } else {
     formMessage.style.color = "green";
     formMessage.textContent = "Thank you, " + name + "! We got your message.";
